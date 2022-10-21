@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Player, Team } from './interfaces/balldontlie';
+import { Player } from './interfaces/balldontlie';
 import { useParams } from 'react-router-dom';
 import { Link, useLocation } from "react-router-dom"
 
@@ -23,7 +23,7 @@ export default function PlayerView() {
             .catch(error => {
                 console.error("error fetching players data", error)
             })
-    }, [location.key])
+    }, [location.key, api, params.playerId])
 
     return (
         <div className="player-detail">
@@ -32,7 +32,7 @@ export default function PlayerView() {
                 <Link to={`/player/${player.id + 1}`}> {">"} </Link>
             </div>
             <div>
-                <img src='../paw.jpg'></img>
+                <img src='../paw.jpg' alt="player"></img>
                 <h1>{player.first_name} {player.last_name}</h1>
                 {player.team ? <h3>{player.team.full_name}</h3> : <></>}
                 <p>Height: {player.height_feet}-{player.height_inches}</p>

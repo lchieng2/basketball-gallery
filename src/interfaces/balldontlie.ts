@@ -1,12 +1,3 @@
-export interface Team {
-    id: number
-    abbreviation: string
-    city: string
-    conference: string
-    division: number
-    full_name: number
-    name: number
-}
 export interface Player {
     id: number
     first_name: string

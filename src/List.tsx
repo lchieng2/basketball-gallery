@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Player, Team } from './interfaces/balldontlie';
+import { Player } from './interfaces/balldontlie';
 import { Link } from "react-router-dom"
 
 export default function ListView() {
@@ -74,8 +74,8 @@ export default function ListView() {
             .catch(error => {
                 console.error("error fetching players data", error)
             })
-        sortAsc(sortBy)
-    }, [])
+
+    }, [api])
 
 
     return (
@@ -103,7 +103,7 @@ export default function ListView() {
                             return  <div className="player-container" key={player.id}>
                                         <Link to={`/player/${player.id}`}>
                                             <li>
-                                                <img src="paw.jpg" className="player-image"></img>
+                                                <img src="paw.jpg" alt="player" className="player-image"></img>
                                                 <div className="player-info">
                                                     <div className="player-name">{player.first_name} {player.last_name}</div>
                                                     <div className="player-team">{player.team.full_name}</div>

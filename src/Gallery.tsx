@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { Player, Team } from './interfaces/balldontlie';
+import { Player } from './interfaces/balldontlie';
 import { Link } from "react-router-dom"
 
 export default function GalleryView() {
@@ -25,7 +25,7 @@ export default function GalleryView() {
             .catch(error => {
                 console.error("error fetching players data", error)
             })
-    }, [])
+    }, [api])
 
 
 
@@ -46,7 +46,7 @@ export default function GalleryView() {
                             return <div className="card" key={player.id}>
                                         <Link to={`/player/${player.id}`}>
                                             <div className="player-data">
-                                                <img src='paw.jpg'></img>
+                                                <img src='paw.jpg' alt="player"></img>
                                                 <p>{player.first_name} {player.last_name}</p>
                                             </div>
                                         </Link>
