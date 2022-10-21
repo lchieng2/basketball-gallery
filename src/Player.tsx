@@ -23,7 +23,7 @@ export default function PlayerView() {
             .catch(error => {
                 console.error("error fetching players data", error)
             })
-    }, [location.key, api, params.playerId])
+    }, [location.key])
 
     return (
         <div className="player-detail">

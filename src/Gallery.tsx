@@ -25,7 +25,7 @@ export default function GalleryView() {
             .catch(error => {
                 console.error("error fetching players data", error)
             })
-    }, [api])
+    }, [])
 
 
 

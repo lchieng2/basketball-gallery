@@ -42,10 +42,8 @@ export default function ListView() {
     }
 
     const handleSortBy = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        console.log(e.target.value)
         setSortBy(e.target.value)
         
-
         if (isAsc) {
             sortAsc(e.target.value)
         } else {
@@ -75,7 +73,7 @@ export default function ListView() {
                 console.error("error fetching players data", error)
             })
 
-    }, [api])
+    }, [])
 
 
     return (
