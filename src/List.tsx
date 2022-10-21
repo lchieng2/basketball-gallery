@@ -60,12 +60,9 @@ export default function ListView() {
         setIsAsc(!isAsc)
     }
 
-    const api = axios.create({
-        baseURL: 'https://www.balldontlie.io/api/v1/'
-    })
-
     useEffect(() => {
-        api.get('players?per_page=100')
+        console.log("hello")
+        axios.get('https://www.balldontlie.io/api/v1/players?per_page=100')
             .then(response => {
                 setPlayers(response.data.data)
             })

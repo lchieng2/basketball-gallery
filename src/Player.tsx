@@ -2,28 +2,23 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { Player } from './interfaces/balldontlie';
 import { useParams } from 'react-router-dom';
-import { Link, useLocation } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 
 export default function PlayerView() {
     const [player, setPlayer] = useState<Player>(Object)
     const params = useParams();
-    const location = useLocation();
-
-
-    const api = axios.create({
-        baseURL: 'https://www.balldontlie.io/api/v1/'
-    })
     
     useEffect(() => {
-        api.get(`players/${params.playerId}`)
+        console.log("hello")
+        axios.get(`https://www.balldontlie.io/api/v1/players/${params.playerId}`)
             .then(response => {
                 setPlayer(response.data)
             })
             .catch(error => {
                 console.error("error fetching players data", error)
             })
-    }, [location.key])
+    }, [params.playerId])
 
     return (
         <div className="player-detail">
