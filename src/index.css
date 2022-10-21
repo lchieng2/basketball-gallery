@@ -11,3 +11,120 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* HEADER */
+.top {
+  background: orange;
+  color: white;
+  font-size: 30px;
+  padding: 10px;
+  width: 100%
+}
+
+span {
+  margin-top: 50px;
+  margin-bottom: 50px;
+} 
+
+a {
+  margin: 50px;
+  color: white;
+  text-decoration: none;
+}
+
+
+/* CARD */
+.card {
+  margin: 0px 20px;
+  width: 150px;
+  float: left;
+}
+
+.player-data img {
+  width: 100%;
+  height: auto;
+}
+
+.player-data p {
+  margin: 0px;
+  font-size: 10px;
+  padding: 0px 15px;
+  text-align: center;
+}
+
+/* BUTTONS */
+button {
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 20px 20px;
+  color: black;
+}
+
+/* SEARCH */
+.search {
+  height: 200px;
+  background-color: grey;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+input {
+  height: 50px;
+  width: 50%;
+  margin-bottom: 10px;
+}
+.toggle-button {
+  width: 20%;
+}
+select {
+  height: 50px;
+  width: 25%;
+  text-align: center;
+}
+
+/* LIST */
+.list-container {
+  width: 50%;
+  border-style: solid;
+  padding: 10px;
+}
+.player-container {
+  text-align: left;
+  list-style: none;
+  background: orange;
+  padding: 5px;
+}
+.player-container:nth-child(odd) {
+  background: #282c34;
+}
+.player-image {
+  float: left;
+  margin-right: 10px;
+  height: 70px;
+}
+
+.player-name {
+  font-size: 25px;
+  font-weight: bold;
+}
+.player-team {
+  font-size: 15px;
+}
+.player-position {
+  font-size: 10px;
+}
+
+/* DETAILS */
+.player-detail {
+  width: 50%;
+  margin-bottom: 300px;
+}
+.move_arrows {
+  margin-bottom: 50px;
+}
+
+.move_arrows a {
+  margin: 0px 150px;
+}

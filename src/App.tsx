@@ -1,25 +1,41 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Link
+} from "react-router-dom"
+
+import ListView from './List';
+import GalleryView from './Gallery';
+import PlayerView from './Player';
+
 
 function App() {
   return (
+    <Router>
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <div className="top">
+          <h1>balldontlie</h1>
+        </div>
+        <span>
+          <div className="links">
+            <Link to="/">List</Link>
+            <Link to="/gallery">Gallery</Link>
+          </div>
+        </span>
+
+        <Routes>
+          <Route path="/" element={<ListView></ListView>}/>
+          <Route path="/gallery" element={<GalleryView></GalleryView>} />
+          <Route path="/player/:playerId" element={<PlayerView></PlayerView>} />
+        </Routes>
       </header>
     </div>
+    </Router>
   );
 }
 
